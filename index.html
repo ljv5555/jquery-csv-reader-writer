@@ -110,7 +110,10 @@ jQuery(function(){window.init1();});
     onclick="window.top.location.href=window.location.href;">Load frame in top window</button>
     <div></div><div></div>
     <div style="background:#ba9;">
-        <div>CSV Text: </div><div><textarea id="ta1"></textarea></div>
+        <div>CSV Text: </div><div>
+        <textarea id="ta1">a,b,c
+c1v,"a string with ""quotes"", and a comma",colum3value
+        </textarea></div>
     </div>
     <button id="b2" type="button" onclick="$('.out').html($.csv2htmlTable($('#ta1').val()));">CSV Text - - &gt; Editor</button>
     <button id="b3" type="button" onclick="$('#ta1').val($.htmlTable2csv($('.out').html()));">Editor - - &gt; CSV Text</button>    
