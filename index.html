@@ -87,10 +87,15 @@ window.init1=function(){
     $.htmlTable2csv = function(i){return $.array2csv($.htmlTable2array(i));};
     $.csv2htmlTable = function(i){return $.array2htmlTable($.csv2array(i));};
     
+    window.addRemoveRowColumn = function(button){
+    	
+    	
+    };
+    
     
 };
 jQuery(function(){window.init1();});
-    
+
     
 </script>
 </head><body>
@@ -103,8 +108,8 @@ jQuery(function(){window.init1();});
     <div style="background:#ba9;">
         <div>CSV Text: </div><div><textarea id="ta1"></textarea></div>
     </div>
-    <button id="b2" type="button" onclick="$('.out').html($.csv2htmltable($('#ta1').val()));">CSV Text - - &gt; Editor</button>
-    <button id="b3" type="button" onclick="$('#ta1').val($.htmltable2csv($('.out').html()));">Editor - - &lt; CSV Text</button>    
+    <button id="b2" type="button" onclick="$('.out').html($.csv2htmlTable($('#ta1').val()));">CSV Text - - &gt; Editor</button>
+    <button id="b3" type="button" onclick="$('#ta1').val($.htmlTable2csv($('.out').html()));">Editor - - &lt; CSV Text</button>    
 
     
     
