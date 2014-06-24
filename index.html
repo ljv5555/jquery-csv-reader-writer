@@ -57,7 +57,7 @@ window.init1=function(){
             var tr = $('<tr/>');
             for(var j=0;j<row.length;j++){
                 var val = row[j]+'';
-                var td = $('<td/>');
+                var td = $('<td/>').attr('contenteditable',"true");
                 td.text(val);
                 tr.append(td);
             }
