@@ -15,10 +15,12 @@ button{border:1px solid #ccc;}
 .out tr{background:#ccc;}
 .out tr:nth-of-type(even){background:#ddd;}
 .out td{background:#eee;padding:4px 4px 4px 4px;}
-.activecell{background:gold !important;}
 #ta1{margin:20px 5% 20px 5%;width:90%;height:80px;}
 .wddb{min-width: 99%;background:#ba9;display:table;}
 .sw{background-color:rgba(100,100,100,0.25);}
+.activecell_row{background:rgba(0,250,250,0.45) !important;}
+.activecell_column{background:rgba(0,250,250,0.45) !important;}
+.activecell{background:rgba(0,250,250,0.45) !important;}
 
     </style>
 
@@ -56,7 +58,24 @@ window.init1=function(){
         return r;
     }
 
-    
+    $.updateAndGetHtmlTableActiveCellAndRowCellsAndColumnCells(table)
+    {
+    	var jqtable = table;
+    	if(!table.slideDown){jqtable = $(d);}
+    	
+    	var ac = jqtable.find('.activecell');
+    	var aci = $.getHtmlTableActiveCell(jqtable);
+    	var acrowi = aci[0]==-1?0,aci[0];
+    	var accoli = aci[1]==-1?0,aci[1];
+    	var acrow = jqtable.find('tr:nth-child('+(acrowi+1)+')');
+    	var acrowcells = acrow.find('td,th');
+    	var accolcells = jqtable.find('td:nth-child('+(accoli+1)+')');
+    	jqtable.find('*').removeClass('activecell').removeClass('activecell_column').removeClass('activecell_row');
+    	acrowcells.addClass('activecell_row');
+    	accolcells.addClass('activecell_column');
+    	ac.addClass('activecell');
+    	return [ac,acrowcells,accolcells];
+    }
     
     
     $.array2htmlTable=function(d,selectedrowindex,selectedcolumnindex){
@@ -131,7 +150,20 @@ window.init1=function(){
     $.csv2htmlTable = function(i){return $.array2htmlTable($.csv2array(i));};
     
     window.addRemoveRowColumn = function(button){
+    	var table = $('.out table');
+    	if(table.find('td,th').length==0){return;}
+    	var ac = $('.activecell');
+    	var aci = $.getHtmlTableActiveCell();
+    	var acrowi = aci[0]==-1?0,aci[0];
+    	var accoli = aci[1]==-1?0,aci[1];
+    	var acrow = table.find('tr:nth-child('+(acrowi+1)+')');
+    	var acrowcells = acrow.find('td,th');
+    	var accolcells = table.find('td:nth-child('+(accoli+1)+')');
+    	
+    		
     	if(button=="ira"){
+    		var coli = ac.index();
+    		
     		
     	}
     	else if(button=="irb"){
