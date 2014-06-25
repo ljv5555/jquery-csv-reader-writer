@@ -41,7 +41,7 @@ window.init1=function(){
             var row = d[i]; 
             for(var j=0;j<row.length;j++){
                 if(j!=0){r+=",";}
-                row+='"'+(row[j]+'').replace(/\"/g,'\"\"')+'"';
+                r+='"'+(row[j]+'').replace(/\"/g,'\"\"')+'"';
             }
         }
         return r;
