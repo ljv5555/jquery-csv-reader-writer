@@ -133,20 +133,16 @@ window.init1=function(){
     	else if(button=="irb"){
     		
     	}
-    	else if(button=="irb"){
-    		
-    	}
     	else if(button=="dr"){
-    		
+    		$('.activecell').parent('tr').remove();$.setHtmlTableActiveCell($('.out table'));	
     	}
     	else if(button=="icb"){
     		
     	}
-    	else if(button=="dcb"){
-    		
-    	}
     	else if(button=="dc"){
-    		
+    		var coli = $('.activecell').parent('td,th').index();
+    		var rows = $('.activecell').parent('table').find('tr');
+    		rows.each(function(i,e){var cells = $(e).find('td,th');$(cells[coli]).remove();});	
     	}
     	
     };
