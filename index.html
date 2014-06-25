@@ -129,7 +129,7 @@ window.init1=function(){
     		var target = $(e.target);
     		var rindex = target.parent().prevAll().length;
     		var cindex = target.prevAll().length;
-    		$.setHtmlTableActiveCell(target.closest('table'),index,cindex);
+    		$.setHtmlTableActiveCell(target.closest('table'),rindex,cindex);
     	});
     	return jqtable.html();
     };
