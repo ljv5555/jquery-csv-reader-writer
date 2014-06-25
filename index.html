@@ -50,7 +50,9 @@ window.init1=function(){
     
     
     
-    $.array2htmlTable=function(d){
+    $.array2htmlTable=function(d,selectedrowindex,selectedcolumniudex){
+        if(selectedrowindex!==0){if(!selectedrowindex){selectedrowindex=0;}}
+        if(selectedcolumnindex!==0){if(!selectedcolumnindex){selectedcolumnindex=0;}}
         var jqtable = $('<table/>');
         for(var i=0;i<d.length;i++){
             var row=d[i];
@@ -58,12 +60,32 @@ window.init1=function(){
             for(var j=0;j<row.length;j++){
                 var val = row[j]+'';
                 var td = $('<td/>').attr('contenteditable',"true");
+                if(i==selectedrowindex && j==selectedcolumnindex){td.addClass('activecell');}
                 td.text(val);
                 tr.append(td);
             }
             jqtable.append(tr);
         }
+        if(jqtable.find('.activecell').length === 0){jqtable.find('td').first().addClass('activecell');}
         return jqtable[0];
+    }
+    $.getHtmlTableActiveCell(d)
+    {
+    	var rtn = [-1,-1];
+    	var jqtable = d;
+    	if(!d.slideDown){jqtable = $(d);}
+    	var rows = jqtable.find('tr');
+    	for(var j=0;j<rows.length;j++)
+    	{
+    		var row = $(rows[j]);
+    		var cells = row.children('tr,th');
+    		for(var k=0;k<cells.length;k++)
+    		{
+    			if($(cells[k]).hasClass('activecell')){rtn=[j,k];break;}
+    		}
+    	}
+    	return rtn;
+
     }
 
     $.htmlTable2array=function(tableElement)
@@ -84,7 +106,7 @@ window.init1=function(){
             tcells.each(function(i2,e2){rtnr.push(''+$(e2).text());});
             rtn.push(rtnr);            
         });
-		key1();
+	key1();
         return rtn;
     }
     
@@ -92,13 +114,27 @@ window.init1=function(){
     $.csv2htmlTable = function(i){return $.array2htmlTable($.csv2array(i));};
     
     window.addRemoveRowColumn = function(button){
-    	if(button=="ira"){}
-    	else if(button=="irb"){}
-    	else if(button=="irb"){}
-    	else if(button=="dr"){}
-    	else if(button=="icb"){}
-    	else if(button=="dcb"){}
-    	else if(button=="dc"){}
+    	if(button=="ira"){
+    		
+    	}
+    	else if(button=="irb"){
+    		
+    	}
+    	else if(button=="irb"){
+    		
+    	}
+    	else if(button=="dr"){
+    		
+    	}
+    	else if(button=="icb"){
+    		
+    	}
+    	else if(button=="dcb"){
+    		
+    	}
+    	else if(button=="dc"){
+    		
+    	}
     	
     };
     
