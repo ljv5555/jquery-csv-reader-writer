@@ -99,6 +99,7 @@ window.init1=function(){
     };
     $.getHtmlTableActiveCell=function(d){
     	var rtn = [-1,-1];
+    	if(!d){d=$('.out table');}
     	var jqtable = d;
     	if(!d.slideDown){jqtable = $(d);}
     	jqtable.find('tr').each(function(i,e){
