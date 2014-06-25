@@ -80,6 +80,8 @@ window.init1=function(){
     		var cells = row.children('tr,th');
     		for(var k=0;k<cells.length;k++)
     		{
+    			console.log(cells[k]);
+    			console.log('hasclass='+$(cells[k]).hasClass('activecell'));
     			if($(cells[k]).hasClass('activecell')){rtn=[j,k];break;}
     		}
     	}
@@ -96,7 +98,7 @@ window.init1=function(){
         var tw1 = $('<div class="wdiv1"/>');
         tw1.append(tableElement);
         tw.append(tw1);
-		var key1=function(){return 'html2csv2html';};
+	var key1=function(){return 'html2csv2html';};
         var trows = tw.find('div.wdiv1>table>tr,div.wdiv1>table>*>tr');
         trows.each(function(i,e){
             var rtnr = [];
