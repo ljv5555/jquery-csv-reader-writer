@@ -140,9 +140,11 @@ window.init1=function(){
     		
     	}
     	else if(button=="dc"){
-    		var coli = $('.activecell').parent('td,th').index();
-    		var rows = $('.activecell').parent('table').find('tr');
-    		rows.each(function(i,e){var cells = $(e).find('td,th');$(cells[coli]).remove();});	
+    		var coli = $('.activecell').index();
+    		var table = $('.activecell').closest('table');
+    		var rows = table.find('tr');
+    		rows.each(function(i,e){ cells = $(e).find('td,th');$(cells[coli]).remove();});
+    		$.setHtmlTableActiveCell(table);
     	}
     	
     };
