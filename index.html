@@ -127,9 +127,12 @@ window.init1=function(){
     		console.log(e);
     		window.eee=e;
     		var target = $(e.target);
-    		var col = target.index();
-    		var row = target.closest('tr').index();
-    		$.setHtmlActiveCell(target.closest('table'),row,col);
+    		var col = $(window.eee.target).parent().find(e.target).index();
+    		
+    		var rowe = target.closest('tr');
+    		var row = target.parent().find('th,td').index();
+    		console.log('r='+row+', c='+c);
+    		$.setHtmlTableActiveCell(target.closest('table'),row,col);
     	});
     	return jqtable.html();
     };
