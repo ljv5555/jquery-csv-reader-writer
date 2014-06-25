@@ -41,7 +41,8 @@ window.init1=function(){
     // alredy defined: $.csv2Array(csvstring)
     $.csv2array=function(csv)
     {
-    	if(csv && csv.length!==0 && csv[csv.length-1]!='\n'){csv+='\n';return $.csv2Array(csv);}
+    	if(csv && csv.length!==0 && csv[csv.length-1]!='\n'){csv+='\n';}
+    	return $.csv2Array(csv);
     };
     $.array2csv=function(d){var r = '';
         for(var i=0;d && d.length && i<d.length;i++){
