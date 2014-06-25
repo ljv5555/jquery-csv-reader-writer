@@ -73,18 +73,11 @@ window.init1=function(){
     	var rtn = [-1,-1];
     	var jqtable = d;
     	if(!d.slideDown){jqtable = $(d);}
-    	var rows = jqtable.find('tr');
-    	for(var j=0;j<rows.length;j++)
-    	{
-    		var row = $(rows[j]);
-    		var cells = row.children('tr,th');
-    		for(var k=0;k<cells.length;k++)
-    		{
-    			console.log(cells[k]);
-    			console.log('hasclass='+$(cells[k]).hasClass('activecell'));
-    			if($(cells[k]).hasClass('activecell')){rtn=[j,k];break;}
-    		}
-    	}
+    	jqtable.find('tr').each(function(i,e){
+    		$(e).find('td,th').each(function(i2,e2){
+    			if($(e2).hasClass('activecell')){rtn=[i,i2];}
+    		});
+    	});
     	return rtn;
 
     };
