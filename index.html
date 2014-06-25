@@ -17,7 +17,7 @@ button{border:1px solid #ccc;}
 .out td{background:#eee;padding:4px 4px 4px 4px;}
 .activecell{background:gold !important;}
 #ta1{margin:20px 5% 20px 5%;width:90%;height:80px;}
-.wddb{background:#ba9;display:table;}
+.wddb{min-width: 99%;background:#ba9;display:table;}
     </style>
 
 <script src="jquery.min.js"></script>
@@ -161,7 +161,7 @@ jQuery(function(){window.init1();});
     id="btf" type="button" 
     onclick="window.top.location.href=window.location.href;">Load frame in top window</button>
     <div></div><div></div>
-    <div style="background:#ba9;">
+    <div>
         <div>CSV Text: </div><div>
         <textarea id="ta1">a,b,c
 c1v,"a string with ""quotes"", and a comma",colum3value
