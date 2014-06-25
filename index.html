@@ -58,7 +58,7 @@ window.init1=function(){
         return r;
     }
 
-    $.updateAndGetHtmlTableActiveCellAndRowCellsAndColumnCells(table)
+    $.updateAndGetHtmlTableActiveCellAndRowCellsAndColumnCells=function(table)
     {
     	var jqtable = table;
     	if(!table.slideDown){jqtable = $(d);}
@@ -75,7 +75,7 @@ window.init1=function(){
     	accolcells.addClass('activecell_column');
     	ac.addClass('activecell');
     	return [ac,acrowcells,accolcells];
-    }
+    };
     
     
     $.array2htmlTable=function(d,selectedrowindex,selectedcolumnindex){
@@ -96,7 +96,7 @@ window.init1=function(){
         }
         if(jqtable.find('.activecell').length === 0){jqtable.find('td,th').first().addClass('activecell');}
         return jqtable[0];
-    }
+    };
     $.getHtmlTableActiveCell=function(d){
     	var rtn = [-1,-1];
     	var jqtable = d;
