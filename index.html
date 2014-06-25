@@ -94,10 +94,11 @@ window.init1=function(){
     	jqtable.find('.activecell').removeClass('activecell');
     	jqtable.find('tr').each(function(i,e){
     		$(e).find('td,th').each(function(i2,e2){
-    			if($(e2).hasClass('activecell')){$(e2).addClass('activecell');}
+    			if(i==selectedcolumnindex && i2==selectedrowindex){$(e2).addClass('activecell');}
     		});
     	});
     	if(jqtable.find('.activecell').length === 0){jqtable.find('td,th').first().addClass('activecell');}
+    	return jqtable.html();
     };
 
     $.htmlTable2array=function(tableElement)
