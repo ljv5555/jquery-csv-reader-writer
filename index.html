@@ -126,7 +126,9 @@ window.init1=function(){
     $.htmlTable2csv = function(i){return $.array2csv($.htmlTable2array(i));};
     $.csv2htmlTable = function(i){return $.array2htmlTable($.csv2array(i));};
     
-    window.addRemoveRowColumn = function(button){
+    window.addRemoveRowColumn = function(b){
+    	var button="";
+    	if(b){button=b.id);
     	if(button=="ira"){
     		
     	}
