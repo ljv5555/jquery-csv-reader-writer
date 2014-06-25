@@ -126,9 +126,7 @@ window.init1=function(){
     $.htmlTable2csv = function(i){return $.array2csv($.htmlTable2array(i));};
     $.csv2htmlTable = function(i){return $.array2htmlTable($.csv2array(i));};
     
-    window.addRemoveRowColumn = function(b){
-    	var button="";
-    	if(b){button=b.id);
+    window.addRemoveRowColumn = function(button){
     	if(button=="ira"){
     		
     	}
@@ -180,15 +178,15 @@ c1v,"a string with ""quotes"", and a comma",colum3value
     <div class="sw">
         <table class="ht1"><tr><td class="etd">Editor:</td>
             <td class="rotd">Row Operations:<br/>
-                <button id="irb" type="button" onclick="window.addRemoveRowColumn(this);">insert before</button>    
-                <br/><button id="ira" type="button" onclick="window.addRemoveRowColumn(this);">insert after</button>
-                <br/><button id="dr" type="button" onclick="window.addRemoveRowColumn(this);">delete</button>
+                <button id="irb" type="button" onclick="window.addRemoveRowColumn(this.id);">insert before</button>    
+                <br/><button id="ira" type="button" onclick="window.addRemoveRowColumn(thi.ids);">insert after</button>
+                <br/><button id="dr" type="button" onclick="window.addRemoveRowColumn(this.id);">delete</button>
 
             </td>
             <td class="cotd">Column Operations:<br/>
-                <button id="icb" type="button" onclick="window.addRemoveRowColumn(this);">insert before</button>    
-                <br/><button id="ica" type="button" onclick="window.addRemoveRowColumn(this);">insert after</button>
-                <br/><button id="dc" type="button" onclick="window.addRemoveRowColumn(this);">delete</button>
+                <button id="icb" type="button" onclick="window.addRemoveRowColumn(this.id);">insert before</button>    
+                <br/><button id="ica" type="button" onclick="window.addRemoveRowColumn(this.id);">insert after</button>
+                <br/><button id="dc" type="button" onclick="window.addRemoveRowColumn(this.id);">delete</button>
 
             </td>
             </tr>
