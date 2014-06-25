@@ -164,21 +164,22 @@ window.init1=function(){
     	
     		
     	if(button=="ira"){
-    		acrow.after(acrow.html());
-    		
-    		
+    		acrow.after($('<tr/>').html(acrow.html()));
     	}
     	else if(button=="irb"){
-    		acrow.before(acrow.html());
+    		acrow.before($('<tr/>').html(acrow.html()));
     	}
     	else if(button=="dr"){
-    		$('.activecell').parent('tr').remove();$.setHtmlTableActiveCell($('.out table'));	
+    		acrow.remove();	
+    	}
+    	else if(button=="ica"){
+    		accolcells.each(function(i,e){$(e).after($('<td contenteditable="contenteditable"/>').html($(e).html()));});
     	}
     	else if(button=="icb"){
-    		accolcells.each(function(i,e){$(e).before($(e).html());});
+    		accolcells.each(function(i,e){$(e).before($('<td contenteditable="contenteditable"/>').html($(e).html()));});
     	}
     	else if(button=="dc"){
-    		accolcells.each(function(i,e){$(e).after($(e).html());});
+    		accolcells.remove();
     	}
     	$.setHtmlTableActiveCell(table);
     	
@@ -198,10 +199,12 @@ jQuery(function(){window.init1();});
     onclick="window.top.location.href=window.location.href;">Load frame in top window</button>
     <div></div><div></div>
     <div class="sw">
-        <div>CSV Text: </div><div>
-        <textarea id="ta1">a,b,c
+        <div>CSV Text: </div>
+        <div>
+<textarea id="ta1">a,b,c
 c1v,"a string with ""quotes"", and a comma",colum3value
-        </textarea></div>
+</textarea>
+        </div>
     </div>
     <button id="b2" type="button" onclick="$('.out').html($.csv2htmlTable($('#ta1').val()));">CSV Text - - &gt; Editor</button>
     <button id="b3" type="button" onclick="$('#ta1').val($.htmlTable2csv($('.out').html()));">Editor - - &gt; CSV Text</button>    
@@ -225,7 +228,7 @@ c1v,"a string with ""quotes"", and a comma",colum3value
 
             </td>
             </tr>
-            <tr><td><div class="out" editable="editable"></div></td></tr>
+            <tr><td><div class="out"></div></td></tr>
             </table>
     </div>
 </div>
