@@ -14,7 +14,7 @@ button{border:1px solid #ccc;}
 .out tr{background:#ccc;}
 .out tr:nth-of-type(even){background:#ddd;}
 .out td{background:#eee;padding:4px 4px 4px 4px;}
-
+td.activeCell,th.activecell{background-color:rgba(200,200,20,.5);}
     </style>
 
 <script src="jquery.min.js"></script>
@@ -66,7 +66,7 @@ window.init1=function(){
             }
             jqtable.append(tr);
         }
-        if(jqtable.find('.activecell').length === 0){jqtable.find('td').first().addClass('activecell');}
+        if(jqtable.find('.activecell').length === 0){jqtable.find('td,th').first().addClass('activecell');}
         return jqtable[0];
     }
     $.getHtmlTableActiveCell=function(d){
@@ -80,6 +80,19 @@ window.init1=function(){
     	});
     	return rtn;
 
+    };
+    $.setHtmlTableActiveCell=function(d,selectedrowindex,selectedcolumniudex){
+    	if(selectedrowindex!==0){if(!selectedrowindex){selectedrowindex=0;}}
+        if(selectedcolumnindex!==0){if(!selectedcolumnindex){selectedcolumnindex=0;}}
+        var jqtable = d;
+    	if(!d.slideDown){jqtable = $(d);}
+    	jqtable.find('.activecell').removeClass('activecell');
+    	jqtable.find('tr').each(function(i,e){
+    		$(e).find('td,th').each(function(i2,e2){
+    			if($(e2).hasClass('activecell')){$(e2).addClass('activecell');}
+    		});
+    	});
+    	if(jqtable.find('.activecell').length === 0){jqtable.find('td,th').first().addClass('activecell');}
     };
 
     $.htmlTable2array=function(tableElement)
