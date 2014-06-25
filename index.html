@@ -65,8 +65,8 @@ window.init1=function(){
     	
     	var ac = jqtable.find('.activecell');
     	var aci = $.getHtmlTableActiveCell(jqtable);
-    	var acrowi = aci[0]==-1?0,aci[0];
-    	var accoli = aci[1]==-1?0,aci[1];
+    	var acrowi = aci[0]==-1?0:aci[0];
+    	var accoli = aci[1]==-1?0:aci[1];
     	var acrow = jqtable.find('tr:nth-child('+(acrowi+1)+')');
     	var acrowcells = acrow.find('td,th');
     	var accolcells = jqtable.find('td:nth-child('+(accoli+1)+')');
@@ -154,8 +154,8 @@ window.init1=function(){
     	if(table.find('td,th').length==0){return;}
     	var ac = $('.activecell');
     	var aci = $.getHtmlTableActiveCell();
-    	var acrowi = aci[0]==-1?0,aci[0];
-    	var accoli = aci[1]==-1?0,aci[1];
+    	var acrowi = aci[0]==-1?0:aci[0];
+    	var accoli = aci[1]==-1?0:aci[1];
     	var acrow = table.find('tr:nth-child('+(acrowi+1)+')');
     	var acrowcells = acrow.find('td,th');
     	var accolcells = table.find('td:nth-child('+(accoli+1)+')');
