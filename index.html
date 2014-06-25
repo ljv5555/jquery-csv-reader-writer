@@ -131,7 +131,7 @@ window.init1=function(){
     		
     		var rowe = target.closest('tr');
     		var row = target.parent().find('th,td').index();
-    		console.log('r='+row+', c='+c);
+    		console.log('r='+row+', c='+col);
     		$.setHtmlTableActiveCell(target.closest('table'),row,col);
     	});
     	return jqtable.html();
