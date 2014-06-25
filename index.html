@@ -125,13 +125,10 @@ window.init1=function(){
     	if(jqtable.find('.activecell').length === 0){jqtable.find('td,th').first().addClass('activecell');}
     	jqtable.find('td,th').on('focus',function(e){
     		console.log(e);
-    		window.eee=e;
+    	//	window.eee=e;
     		var target = $(e.target);
-    		var col = $(window.eee.target).parent().find(e.target).index();
-    		
-    		var rowe = target.closest('tr');
-    		var row = target.parent().find('th,td').index();
-    		console.log('r='+row+', c='+col);
+    		var rindex = target.parent().prevAll();
+    		var cindex = target.prevAll().length();
     		$.setHtmlTableActiveCell(target.closest('table'),row,col);
     	});
     	return jqtable.html();
