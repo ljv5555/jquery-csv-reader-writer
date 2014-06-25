@@ -39,7 +39,10 @@ window.init1=function(){
     // load csv_js
     /*eval($('#csv_js').val());   */
     // alredy defined: $.csv2Array(csvstring)
-    $.csv2array=function(csv){if(csv && csv.length!==0 && csv[csv.length-1]!='\n'){csv+='\n';return $.csv2Array(csv);};
+    $.csv2array=function(csv)
+    {
+    	if(csv && csv.length!==0 && csv[csv.length-1]!='\n'){csv+='\n';return $.csv2Array(csv);}
+    };
     $.array2csv=function(d){var r = '';
         for(var i=0;i<d.length;i++){
             if(i!=0){r+='\n';} 
