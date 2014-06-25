@@ -69,8 +69,7 @@ window.init1=function(){
         if(jqtable.find('.activecell').length === 0){jqtable.find('td').first().addClass('activecell');}
         return jqtable[0];
     }
-    $.getHtmlTableActiveCell(d)
-    {
+    $.getHtmlTableActiveCell=function(d){
     	var rtn = [-1,-1];
     	var jqtable = d;
     	if(!d.slideDown){jqtable = $(d);}
@@ -86,7 +85,7 @@ window.init1=function(){
     	}
     	return rtn;
 
-    }
+    };
 
     $.htmlTable2array=function(tableElement)
     {
