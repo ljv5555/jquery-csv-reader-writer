@@ -92,7 +92,13 @@ window.init1=function(){
     $.csv2htmlTable = function(i){return $.array2htmlTable($.csv2array(i));};
     
     window.addRemoveRowColumn = function(button){
-    	
+    	if(button=="ira"){}
+    	else if(button=="irb"){}
+    	else if(button=="irb"){}
+    	else if(button=="dr"){}
+    	else if(button=="icb"){}
+    	else if(button=="dcb"){}
+    	else if(button=="dc"){}
     	
     };
     
@@ -127,13 +133,13 @@ c1v,"a string with ""quotes"", and a comma",colum3value
             <td class="rotd">Row Operations:<br/>
                 <button id="irb" type="button" onclick="window.addRemoveRowColumn(this);">insert before</button>    
                 <br/><button id="ira" type="button" onclick="window.addRemoveRowColumn(this);">insert after</button>
-                <br/><button id="dra" type="button" onclick="window.addRemoveRowColumn(this);">delete</button>
+                <br/><button id="dr" type="button" onclick="window.addRemoveRowColumn(this);">delete</button>
 
             </td>
             <td class="cotd">Column Operations:<br/>
                 <button id="icb" type="button" onclick="window.addRemoveRowColumn(this);">insert before</button>    
                 <br/><button id="ica" type="button" onclick="window.addRemoveRowColumn(this);">insert after</button>
-                <br/><button id="dca" type="button" onclick="window.addRemoveRowColumn(this);">delete</button>
+                <br/><button id="dc" type="button" onclick="window.addRemoveRowColumn(this);">delete</button>
 
             </td>
             </tr></table>
