@@ -124,10 +124,12 @@ window.init1=function(){
     	});
     	if(jqtable.find('.activecell').length === 0){jqtable.find('td,th').first().addClass('activecell');}
     	jqtable.find('td,th').on('focus',function(e){
+    		console.log(e);
+    		window.eee=e;
     		var target = $(e.target);
     		var col = target.index();
     		var row = target.closest('tr').index();
-    		$.setHtmlActiveTableCell(target.closest('table'),row,col);
+    		$.setHtmlActiveCell(target.closest('table'),row,col);
     	});
     	return jqtable.html();
     };
