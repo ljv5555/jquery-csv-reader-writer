@@ -127,8 +127,8 @@ window.init1=function(){
     		console.log(e);
     	//	window.eee=e;
     		var target = $(e.target);
-    		var rindex = target.parent().prevAll();
-    		var cindex = target.prevAll().length();
+    		var rindex = target.parent().prevAll().length;
+    		var cindex = target.prevAll().length;
     		$.setHtmlTableActiveCell(target.closest('table'),row,col);
     	});
     	return jqtable.html();
