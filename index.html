@@ -112,6 +112,7 @@ window.init1=function(){
     $.setHtmlTableActiveCell=function(d,selectedrowindex,selectedcolumnindex){
     	if(selectedrowindex!==0){if(!selectedrowindex){selectedrowindex=0;}}
         if(selectedcolumnindex!==0){if(!selectedcolumnindex){selectedcolumnindex=0;}}
+        if(!d){d=$('.out table');}
         var jqtable = d;
     	if(!d.slideDown){jqtable = $(d);}
     	jqtable.find('.activecell').removeClass('activecell');
