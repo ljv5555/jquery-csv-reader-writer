@@ -50,7 +50,7 @@ window.init1=function(){
     
     
     
-    $.array2htmlTable=function(d,selectedrowindex,selectedcolumniudex){
+    $.array2htmlTable=function(d,selectedrowindex,selectedcolumnindex){
         if(selectedrowindex!==0){if(!selectedrowindex){selectedrowindex=0;}}
         if(selectedcolumnindex!==0){if(!selectedcolumnindex){selectedcolumnindex=0;}}
         var jqtable = $('<table/>');
@@ -81,7 +81,7 @@ window.init1=function(){
     	return rtn;
 
     };
-    $.setHtmlTableActiveCell=function(d,selectedrowindex,selectedcolumniudex){
+    $.setHtmlTableActiveCell=function(d,selectedrowindex,selectedcolumnindex){
     	if(selectedrowindex!==0){if(!selectedrowindex){selectedrowindex=0;}}
         if(selectedcolumnindex!==0){if(!selectedcolumnindex){selectedcolumnindex=0;}}
         var jqtable = d;
