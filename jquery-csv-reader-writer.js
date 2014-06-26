@@ -1,4 +1,10 @@
-/* */
+
+/**
+  * jQuery CSV Editor plugin - jquery-csv-reader-writer.js
+  * License - Copyright(C) 2014 Louis J Verdertber IV. All rights reserved.
+  * Includes jquery-csv (https://code.google.com/p/jquery-csv/) under the terms of the MIT license.
+  **/
+
 jQuery(function($){
     $.csv2array=function(csv)
     {
